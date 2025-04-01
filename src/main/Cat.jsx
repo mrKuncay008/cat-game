@@ -21,10 +21,10 @@ const Cat = () => {
 
     return (
         <>
-            <div className="relative right-6 top-6 w-3/4 flex items-start justify-start">
+            <div className="relative right-6 top-7 w-2/3 flex items-start justify-start">
                 <img src={catMap[currentImageIndex]} alt="cat" />
                 <img src={catMap[currentImageIndex]} alt="cat-shadow"
-                className="absolute top-[100%] w-auto left-0 scale-y-[-2] opacity-30 grayscale brightness-0 contrast-75"/>
+                className="absolute top-[100%] mt-5 w-auto left-0 scale-y-[-2] opacity-30 grayscale brightness-0 contrast-75"/>
             </div>
         </>
     );
