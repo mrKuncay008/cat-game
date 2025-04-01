@@ -19,11 +19,12 @@ const Background = () => {
     return (
         <>
             <div className="fixed inset-0 z-0 flex items-center justify-center">
-                <img src={bg} alt="background" className="object-cover"/>
+                <img src={bg} alt="background"/> 
+                {/* belum responsif */}
                     <img src={ground} className='absolute w-screen h-4/8 pt-12 bottom-0.5'
                     style={{ left: `${groundImageIndex}px` }}
                     alt='rumput'/>
-                    <img src={ground} className='absolute w-screen h-4/8 pt-12 bottom-0.5 '
+                    <img src={ground} className='absolute w-screen h-4/8 pt-12 bottom-0.5'
                     style={{ left: `${groundImageIndex + window.innerWidth}px` }}
                     alt='rumput'/>
             </div>
