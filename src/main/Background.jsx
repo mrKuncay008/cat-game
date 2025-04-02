@@ -12,7 +12,7 @@ const Background = () => {
             if (groundImageIndex <= -window.innerWidth) {
                 setGroundImageIndex(0);
             }
-        }, 900 / 60);
+        }, 900 / 70);
 
         return () => clearInterval(interval);
     }, [groundImageIndex]);
