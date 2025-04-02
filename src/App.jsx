@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Cat from './main/Cat'
 import Background from './main/Background'
-import { use } from 'react';
 import { FaArrowsRotate } from 'react-icons/fa6';
 import TitleDemo from './main/Title';
 
