@@ -13,6 +13,24 @@
   font-style: normal;
 }
 
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px red, -2px -2px blue;
+  }
+  50% {
+    text-shadow: -2px 2px blue, 2px -2px red;
+  }
+  100% {
+    text-shadow: 2px -2px red, -2px 2px blue;
+  }
+}
+
+.glitch {
+  animation: glitch 1s infinite alternate;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .rotate-icon {
   font-size: 2em;
   animation: rotate 2s linear infinite;
