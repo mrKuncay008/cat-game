@@ -27,8 +27,12 @@ function App() {
         <p>Please Roatate your screen !</p>
       </div>
       )}
-      <Background isPortrait={isPortrait}/>
-      <Cat isPortrait={isPortrait}/>
+      {!isPortrait && (
+        <>
+          <Background />
+          <Cat />
+        </>
+      )}
     </>
   )
 }
