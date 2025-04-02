@@ -24,9 +24,12 @@ function App() {
   return (
     <>
       {isPortrait && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-white p-4 rounded-md shadow-md">
-        Please rotate your device to landscape mode to play the game.
-        <FaArrowsRotate />
+        <div className="absolute gap-3 grid justify-center items-center
+         top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-white p-4 rounded-md">
+          <span>
+            Please rotate your device.
+          </span>
+        <FaArrowsRotate className="rotate-icon text-3xl mt-3 ml-18"/>
       </div>
       )}
       {!isPortrait && (
