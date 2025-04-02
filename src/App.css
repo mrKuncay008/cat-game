@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 #root {
   max-width: 1280px;
@@ -7,9 +6,10 @@
   padding: 2rem;
   text-align: center;
 }
-.text-pixel {
+.text-pixel-sans {
   font-family: "Pixelify Sans", sans-serif;
-  font-weight: 400;
+  font-optical-sizing: auto;
+  font-weight: 600;
   font-style: normal;
 }
 
