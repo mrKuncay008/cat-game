@@ -46,10 +46,21 @@ const Cat = () => {
             setIsJumping(true);
         }
     };
-
+    const handelaTouchJump = () => {
+        if (!isJumping) {
+            setVelocity(-15);
+            setIsJumping(true);
+        }
+        return 0;
+    }
     useEffect(() => {
         window.addEventListener("keydown", handleJump);
-        return () => window.removeEventListener("keydown", handleJump);
+        window.addEventListener("touchstart", handelaTouchJump);
+
+        return () => { 
+            window.removeEventListener("keydown", handleJump);
+            window.removeEventListener("touchstart", handelaTouchJump);
+        }
     }, [isJumping]);
 
     useEffect(() => {
