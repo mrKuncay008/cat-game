@@ -12,25 +12,44 @@ const Cat = () => {
         catOne, catTwo, catThree, catFour, catFive, catSix
     ];
     const [postition, setPosition] = useState(0);
+    const [velocity, setVelocity] = useState(0);
     const [isJumping, setIsJumping] = useState(false);
 
     useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.code === 'Space' && !isJumping) {
-                setIsJumping(true);
-                setPosition(-50);
-                setTimeout(() => {
+        let animationFrame;
+
+        const updateJump = () => {
+            setPosition((prev) => {
+                const newPos = prev + velocity;
+                if (newPos >= 0) {
+                    setVelocity(0);
                     setIsJumping(false);
-                    setPosition(0);
-                }, 500);
-            }
+                    return 0;
+                }
+                return newPos;
+            });
+
+            setVelocity((v) => v + 1);
+            animationFrame = requestAnimationFrame(updateJump);
         };
 
-        window.addEventListener('keydown', handleKeyDown);
-        console.log('Keydown event listener added', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
+        if (isJumping) {
+            animationFrame = requestAnimationFrame(updateJump);
+        }
+
+        return () => cancelAnimationFrame(animationFrame);
+    }, [isJumping, velocity]);
+
+    const handleJump = (event) => {
+        if (event.code === "Space" && !isJumping) {
+            setVelocity(-15);
+            setIsJumping(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("keydown", handleJump);
+        return () => window.removeEventListener("keydown", handleJump);
     }, [isJumping]);
 
     useEffect(() => {
@@ -50,7 +69,7 @@ const Cat = () => {
                 />
                 <img src={catMap[currentImageIndex]} 
                 alt="cat-shadow"
-                style={{ transform: `translateY(${postition * 0.3}px)` }}
+                style={{ transform: `translateY(${postition * 0.2}px)` }}
                 className="absolute top-[100%] mt-5 w-auto left-0 scale-y-[-2] opacity-30 grayscale brightness-0 contrast-75"/>
             </div>
         </>
