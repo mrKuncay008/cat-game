@@ -53,6 +53,7 @@ const Cat = () => {
         }
         return 0;
     }
+    console.log("position", isJumping);
     useEffect(() => {
         window.addEventListener("keydown", handleJump);
         window.addEventListener("touchstart", handelaTouchJump);
