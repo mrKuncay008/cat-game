@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import bg from '../assets/image/bg.jpg';
-import ground from '../assets/image/ground.jpg';
+import ground from '../assets/image/ground.png';
 
 const Background = () => {
     const [groundImageIndex, setGroundImageIndex] = useState(0);
-    const gSpeed = 4;
+    const gSpeed = 4.5;
+
+    const [bgImageIndex, setBgImageIndex] = useState(0);
+    const bSpeed = 1.5;
 
     useEffect(()=> {
         const interval = setInterval(() => {
@@ -12,19 +15,39 @@ const Background = () => {
             if (groundImageIndex <= -window.innerWidth) {
                 setGroundImageIndex(0);
             }
-        }, 900 / 70);
+        }, 600 / 60);
 
         return () => clearInterval(interval);
     }, [groundImageIndex]);
+
+    useEffect(()=> {
+        const intervalBg = setInterval(() => {
+            setBgImageIndex((prevPov) => prevPov - bSpeed);
+            if (bgImageIndex <= -window.innerWidth) {
+                setBgImageIndex(0);
+            }
+        }, 600 / 60);
+
+        return () => clearInterval(intervalBg);
+    }, [groundImageIndex]);
+
     return (
         <>
-            <div className="fixed inset-0 z-0 flex items-center justify-center">
-                <img src={bg} alt="background"/> 
-                {/* belum responsif */}
-                    <img src={ground} className='absolute w-screen h-4/8 pt-12 bottom-0.5'
+            <div className="fixed w-screen flex items-center justify-center">
+                <img src={bg} 
+                className='fixed w-screen'
+                alt="background"
+                style={{ left: `${bgImageIndex}px` }}
+                /> 
+                <img src={bg} 
+                className='fixed w-screen'
+                alt="background"
+                style={{ left: `${bgImageIndex + window.innerWidth}px` }}
+                />
+                    <img src={ground} className='fixed w-screen h-4/8 pt-2 lg:pt-6 bottom-0.5'
                     style={{ left: `${groundImageIndex}px` }}
                     alt='rumput'/>
-                    <img src={ground} className='absolute w-screen h-4/8 pt-12 bottom-0.5'
+                    <img src={ground} className='fixed w-screen h-4/8 pt-2 lg:pt-6 bottom-0.5'
                     style={{ left: `${groundImageIndex + window.innerWidth}px` }}
                     alt='rumput'/>
             </div>

@@ -34,9 +34,11 @@ function App() {
       )}
       {!isPortrait && (
         <>
+        <div className='fixed inset-0 w-screen h-screen overflow-hidden flex flex-col items-center justify-center'>
           <Background />
             <TitleDemo />
           <Cat />
+        </div>
         </>
       )}
     </>
