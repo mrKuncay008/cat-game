@@ -73,15 +73,15 @@ const Cat = () => {
 
     return (
         <>
-            <div className="relative right-6 top-7 w-2/3 flex items-start justify-start">
+            <div className="relative right-6 mt-7 top-10 lg:top-20 w-36 grid items-start justify-start">
                 <img src={catMap[currentImageIndex]} 
                 alt="cat" 
                 style={{ transform: `translateY(${postition}px)` }}
                 />
-                <img src={catMap[currentImageIndex]} 
-                alt="cat-shadow"
-                style={{ transform: `translateY(${postition * 0.2}px)` }}
-                className="absolute lg:top-28 mt-7 left-0 scale-y-[-2] -skew-x-[-12] opacity-30 grayscale brightness-0 contrast-75"/>
+                    <img src={catMap[currentImageIndex]} 
+                    alt="cat-shadow"
+                    style={{ transform: `translateY(${postition * 0.2}px)` }}
+                    className="relative top-7 scale-y-[-2] left-0 -skew-x-[-12] opacity-30 grayscale brightness-0 contrast-75"/>
             </div>
         </>
     );
