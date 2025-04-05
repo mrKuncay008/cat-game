@@ -44,10 +44,10 @@ const Background = () => {
                 alt="background"
                 style={{ left: `${bgImageIndex + window.innerWidth}px` }}
                 />
-                    <img src={ground} className='fixed w-screen h-4/8 pt-2 lg:pt-6 bottom-0.5'
+                    <img src={ground} className='fixed w-screen h-4/8 pt-7 lg:pt-10 bottom-0.5'
                     style={{ left: `${groundImageIndex}px` }}
                     alt='rumput'/>
-                    <img src={ground} className='fixed w-screen h-4/8 pt-2 lg:pt-6 bottom-0.5'
+                    <img src={ground} className='fixed w-screen h-4/8 pt-7 lg:pt-10 bottom-0.5'
                     style={{ left: `${groundImageIndex + window.innerWidth}px` }}
                     alt='rumput'/>
             </div>
