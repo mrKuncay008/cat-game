@@ -81,7 +81,7 @@ const Cat = () => {
                 <img src={catMap[currentImageIndex]} 
                 alt="cat-shadow"
                 style={{ transform: `translateY(${postition * 0.2}px)` }}
-                className="absolute top-[100%] mt-5 w-auto left-0 scale-y-[-2] opacity-30 grayscale brightness-0 contrast-75"/>
+                className="absolute lg:top-28 mt-7 left-0 scale-y-[-2] -skew-x-[-12] opacity-30 grayscale brightness-0 contrast-75"/>
             </div>
         </>
     );
