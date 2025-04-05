@@ -73,7 +73,7 @@ const Cat = () => {
 
     return (
         <>
-            <div className="relative right-6 mt-7 top-10 lg:top-20 w-36 grid items-start justify-start">
+            <div className="relative right-6 mt-7 top-10 lg:top-20 w-36 lg:w-44 grid items-start justify-start">
                 <img src={catMap[currentImageIndex]} 
                 alt="cat" 
                 style={{ transform: `translateY(${postition}px)` }}
